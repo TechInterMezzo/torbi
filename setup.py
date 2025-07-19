@@ -37,11 +37,6 @@ def get_extensions():
 
     if windows:
         cxx_args = ['/O2', '/openmp']
-        cxx_args = [
-            "/O2" if not debug_mode else "/Od",
-            ['/O2', '/openmp']
-            # "-DPy_LIMITED_API=0x03090000",  # min CPython version 3.9
-        ]
         if debug_mode:
             raise ValueError('debug_mode not currently supported on windows')
     elif macos:
